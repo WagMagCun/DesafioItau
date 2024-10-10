@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Itau Bank Transfer API
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+    com.itau.banking.transfer_api: INFO
+  file:
+    name: logs/application.log

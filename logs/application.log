@@ -1,0 +1,264 @@
+2024-10-10T00:21:46.089-03:00  WARN 29728 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-10-10T00:35:19.097-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 27512 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:35:19.107-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:35:22.489-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9a7d44f4-f4ef-3359-ae24-f7df5878c87f
+2024-10-10T00:35:23.490-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:35:23.540-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:35:23.540-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:35:23.753-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:35:23.754-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4476 ms
+2024-10-10T00:35:23.961-03:00  WARN 27512 --- [Itau Bank Transfer API] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transferController' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\application\web\controller\TransferController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferServiceImpl' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\domain\service\impl\TransferServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferGatewayAdapter' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\resource\adapter\TransferGatewayAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-10-10T00:35:23.968-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-10T00:35:24.000-03:00  INFO 27512 --- [Itau Bank Transfer API] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-10T00:35:24.108-03:00 ERROR 27512 --- [Itau Bank Transfer API] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.itau.banking.transfer_api.resource.adapter.TransferGatewayAdapter required a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' in your configuration.
+
+2024-10-10T00:37:20.071-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 28424 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:37:20.080-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:37:23.168-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9a7d44f4-f4ef-3359-ae24-f7df5878c87f
+2024-10-10T00:37:24.107-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:37:24.145-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:37:24.146-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:37:24.345-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:37:24.345-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4121 ms
+2024-10-10T00:37:24.578-03:00  WARN 28424 --- [Itau Bank Transfer API] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transferController' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\application\web\controller\TransferController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferServiceImpl' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\domain\service\impl\TransferServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferGatewayAdapter' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\resource\adapter\TransferGatewayAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-10-10T00:37:24.585-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-10T00:37:24.615-03:00  INFO 28424 --- [Itau Bank Transfer API] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-10T00:37:24.732-03:00 ERROR 28424 --- [Itau Bank Transfer API] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.itau.banking.transfer_api.resource.adapter.TransferGatewayAdapter required a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' in your configuration.
+
+2024-10-10T00:40:16.933-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 28696 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:40:16.945-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:40:20.341-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=435d7693-1fed-332f-902c-06b70551e256
+2024-10-10T00:40:21.355-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:40:21.387-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:40:21.388-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:40:21.566-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:40:21.567-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4472 ms
+2024-10-10T00:40:23.820-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T00:40:24.006-03:00  INFO 28696 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.868 seconds (process running for 9.773)
+2024-10-10T00:40:27.093-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T00:40:27.094-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T00:40:27.095-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-10T00:40:27.444-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:40:27.535-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:40:27.546-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T00:40:27.558-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T00:40:27.559-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T00:40:27.561-03:00  INFO 28696 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T00:43:07.750-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 29828 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:43:07.760-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:43:11.047-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dc44c3c5-5c79-310f-847b-dfa4a19d3acd
+2024-10-10T00:43:12.052-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:43:12.086-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:43:12.088-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:43:12.299-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:43:12.300-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4390 ms
+2024-10-10T00:43:14.388-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T00:43:14.559-03:00  INFO 29828 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.518 seconds (process running for 9.37)
+2024-10-10T00:43:18.418-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T00:43:18.419-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T00:43:18.421-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-10T00:43:18.771-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:43:18.829-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:43:18.840-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T00:43:18.851-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T00:43:18.853-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T00:43:18.855-03:00  INFO 29828 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T00:45:52.299-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 30296 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:45:52.313-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:45:55.458-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9a7d44f4-f4ef-3359-ae24-f7df5878c87f
+2024-10-10T00:45:56.433-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:45:56.474-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:45:56.474-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:45:56.644-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:45:56.645-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4146 ms
+2024-10-10T00:45:56.836-03:00  WARN 30296 --- [Itau Bank Transfer API] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transferController' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\application\web\controller\TransferController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferServiceImpl' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\domain\service\impl\TransferServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transferGatewayAdapter' defined in file [H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main\com\itau\banking\transfer_api\resource\adapter\TransferGatewayAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-10-10T00:45:56.844-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-10T00:45:56.880-03:00  INFO 30296 --- [Itau Bank Transfer API] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-10T00:45:56.991-03:00 ERROR 30296 --- [Itau Bank Transfer API] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.itau.banking.transfer_api.resource.adapter.TransferGatewayAdapter required a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.itau.banking.transfer_api.resource.repository.TransferClient' in your configuration.
+
+2024-10-10T00:47:02.571-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 3412 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T00:47:02.598-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T00:47:05.685-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=126b3ad6-b9f5-39bd-846d-726b96bb4f0e
+2024-10-10T00:47:06.653-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T00:47:06.685-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T00:47:06.686-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T00:47:06.865-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T00:47:06.865-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4138 ms
+2024-10-10T00:47:08.641-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T00:47:08.788-03:00  INFO 3412 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.005 seconds (process running for 8.888)
+2024-10-10T00:47:15.332-03:00  INFO 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T00:47:15.333-03:00  INFO 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T00:47:15.334-03:00  INFO 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-10T00:47:15.635-03:00  INFO 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:47:15.640-03:00  INFO 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T00:47:15.652-03:00 ERROR 3412 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.itau.banking.transfer_api.resource.dto.AccountResponseDTO.getId()" because "dto" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.itau.banking.transfer_api.resource.dto.AccountResponseDTO.getId()" because "dto" is null
+	at com.itau.banking.transfer_api.domain.model.AccountModel.fromDTO(AccountModel.java:18) ~[main/:na]
+	at com.itau.banking.transfer_api.domain.service.impl.TransferServiceImpl.transfer(TransferServiceImpl.java:32) ~[main/:na]
+	at com.itau.banking.transfer_api.application.web.controller.TransferController.transfer(TransferController.java:26) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-10-10T01:13:22.758-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 21432 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T01:13:22.767-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T01:13:26.161-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=28284d46-1499-35ed-8036-ad2ddca9f55e
+2024-10-10T01:13:27.198-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T01:13:27.234-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T01:13:27.234-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T01:13:27.410-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T01:13:27.411-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4491 ms
+2024-10-10T01:13:29.695-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T01:13:29.886-03:00  INFO 21432 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.927 seconds (process running for 9.837)
+2024-10-10T01:13:30.657-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T01:13:30.657-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T01:13:30.659-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-10T01:13:30.985-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:13:31.040-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.AccountGatewayAdapter  : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:13:31.051-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:13:31.061-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.adapter.ClientGatewayAdapter   : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:13:31.061-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:13:31.062-03:00  INFO 21432 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:30:13.248-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 24856 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T01:30:13.258-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T01:30:16.350-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=98b3c482-ea53-3ed3-9b06-af7c630c7380
+2024-10-10T01:30:17.304-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T01:30:17.337-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T01:30:17.337-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T01:30:17.495-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T01:30:17.496-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4085 ms
+2024-10-10T01:30:19.758-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T01:30:19.973-03:00  INFO 24856 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.447 seconds (process running for 9.304)
+2024-10-10T01:30:20.214-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T01:30:20.214-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T01:30:20.216-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-10T01:30:20.571-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:30:20.641-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:30:20.658-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:30:20.672-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:30:20.694-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:30:20.696-03:00  INFO 24856 --- [Itau Bank Transfer API] [http-nio-8080-exec-1] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:18.072-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Starting BankTransferApiApplication using Java 17.0.4.1 with PID 11768 (H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api\build\classes\java\main started by Wagner in H:\Other computers\Meu laptop\Pessoal\api-itau\transfer-api)
+2024-10-10T01:38:18.083-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-10T01:38:21.281-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=62824714-0e62-3d45-80ca-f799bb7d4722
+2024-10-10T01:38:22.258-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-10T01:38:22.285-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T01:38:22.285-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-10T01:38:22.434-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T01:38:22.435-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4181 ms
+2024-10-10T01:38:24.602-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-10-10T01:38:24.846-03:00  INFO 11768 --- [Itau Bank Transfer API] [main] c.i.b.t.BankTransferApiApplication       : Started BankTransferApiApplication in 8.62 seconds (process running for 9.497)
+2024-10-10T01:38:25.438-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T01:38:25.439-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T01:38:25.441-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-10T01:38:25.800-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:25.879-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:25.893-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:25.904-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:25.905-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:25.906-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-2] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:27.385-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:27.395-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:27.395-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:27.403-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:27.403-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:27.404-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-3] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:28.338-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:28.348-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Account by ID: 41313d7b-bd75-4c75-9dea-1f4be434007f
+2024-10-10T01:38:28.350-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Search Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:28.358-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully searched Client by ID: bcdd1048-a501-4608-bc82-66d7b4db3600
+2024-10-10T01:38:28.359-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Start transfer: cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
+2024-10-10T01:38:28.360-03:00  INFO 11768 --- [Itau Bank Transfer API] [http-nio-8080-exec-4] c.i.b.t.r.a.TransferGatewayAdapter       : [GATEWAY] Successfully transferred! : cliente: 2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f, conta de origem: bcdd1048-a501-4608-bc82-66d7b4db3600, conta de destino: 41313d7b-bd75-4c75-9dea-1f4be434007f, valor: 1000.0
