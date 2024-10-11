@@ -18,6 +18,6 @@ public class AccountResponseDTO {
     private Boolean ativo;
 
     @JsonProperty("limiteDiario")
-    private String limiteDiario;
+    private double limiteDiario;
 
 }

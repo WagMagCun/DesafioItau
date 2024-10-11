@@ -8,11 +8,13 @@ import lombok.Setter;
 @Setter
 public class TransferResponse {
 
+    public TransferResponse(String idTransferencia) {
+        this.idTransferencia = idTransferencia;
+    }
+
     private String idTransferencia;
 
     public static TransferResponse fromDomain(TransferModel transferModel) {
-        TransferResponse transferResponse =  new TransferResponse();
-        transferResponse.setIdTransferencia(transferModel.getIdTransferencia());
-        return transferResponse;
+        return new TransferResponse(transferModel.getIdTransferencia());
     }
 }

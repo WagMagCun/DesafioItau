@@ -9,6 +9,7 @@ import com.itau.banking.transfer_api.resource.repository.ITransferClient;
 import com.itau.banking.transfer_api.resource.repository.ITransferClientMock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -77,6 +78,40 @@ public class TransferGatewayAdapter implements ITransferGateway {
             log.error(LogTags.GATEWAY + " Error while tranfering :{} Error: {}", logTransfer(transferModel), e.getMessage());
             throw e;
         }
+    }
+
+    @Override
+    public ResponseEntity<Void> updateBalance(TransferModel transferModel){
+
+        try {
+
+            log.info(LogTags.GATEWAY + " Start update balance: {}", logTransfer(transferModel));
+            ResponseEntity<Void> response =  transferClient.updateBalance(transferModel.toDTORequest(transferModel));
+            log.info(LogTags.GATEWAY + " Successfully updated balance! : {} HTTP Status: {}", logTransfer(transferModel),response, response.getStatusCode());
+            return response;
+
+        } catch (Exception e) {
+            log.error(LogTags.GATEWAY + " Error while updating balance :{} Error: {}", logTransfer(transferModel), e.getMessage());
+            throw e;
+        }
+
+    }
+
+    @Override
+    public ResponseEntity<Void> notifyBacen(TransferModel transferModel){
+
+        try {
+
+            log.info(LogTags.GATEWAY + " Start transfer: {}", logTransfer(transferModel));
+            ResponseEntity<Void> response = transferClient.notifyBacen(transferModel.toDTORequest(transferModel));
+            log.info(LogTags.GATEWAY + " Successfully transferred! : {} HTTP Status: {} ", logTransfer(transferModel), response.getStatusCode());
+            return response;
+
+        } catch (Exception e) {
+            log.error(LogTags.GATEWAY + " Error while tranfering :{} Error: {}", logTransfer(transferModel), e.getMessage());
+            throw e;
+        }
+
     }
 
     private String logTransfer(TransferModel transferModel) {

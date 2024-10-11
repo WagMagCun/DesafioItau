@@ -11,7 +11,7 @@ public class AccountModel {
     private String id;
     private double saldo;
     private Boolean ativo;
-    private String limiteDiario;
+    private double limiteDiario;
 
     public static AccountModel fromDTO(AccountResponseDTO dto) {
         AccountModel accountModel = new AccountModel();

@@ -4,6 +4,7 @@ import com.itau.banking.transfer_api.resource.dto.AccountResponseDTO;
 import com.itau.banking.transfer_api.resource.dto.ClientResponseDTO;
 import com.itau.banking.transfer_api.resource.dto.TransferRequestDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "ClienteClient", url = "http://localhost:9090")
@@ -16,9 +17,9 @@ public interface ITransferClient {
     AccountResponseDTO buscarPorId(@PathVariable("id") String id);
 
     @PutMapping("/contas/saldos")
-    AccountResponseDTO updateBalance(@RequestBody TransferRequestDTO request);
+    ResponseEntity<Void> updateBalance(@RequestBody TransferRequestDTO request);
 
     @PostMapping("/notificacoes")
-    AccountResponseDTO notifyBacen(@RequestBody TransferRequestDTO request);
+    ResponseEntity<Void> notifyBacen(@RequestBody TransferRequestDTO request);
 
 }
