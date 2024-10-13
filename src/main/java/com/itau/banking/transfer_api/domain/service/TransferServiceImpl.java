@@ -53,9 +53,9 @@ public class TransferServiceImpl implements ITransferService {
             Throwable cause = ex.getCause();
             if (cause instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
-                throw new RuntimeException("Transfer operation was interrupted", cause);
+                throw new RuntimeException("Falha na tentativa de efetuar transferencia no acesso conta e ou cliente: ", cause);
             } else if (cause instanceof ExecutionException) {
-                throw new RuntimeException("Error during execution", cause.getCause());
+                throw new RuntimeException("Falha ao tentar efetuar transferencia no acesso a conta e ou cliente:", cause.getCause());
             }
             return null;
         });
