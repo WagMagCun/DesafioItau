@@ -15,6 +15,6 @@ public class TransferResponse {
     private String idTransferencia;
 
     public static TransferResponse fromDomain(TransferModel transferModel) {
-        return new TransferResponse(transferModel.getIdTransferencia());
+        return new TransferResponse(transferModel.getIdTransfer());
     }
 }

@@ -3,15 +3,16 @@ package com.itau.banking.transfer_api.domain.model;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
-public class TransferAccountModel {
+@Getter
+public class BalanceAccountModel {
 
     private String sourceId;
     private String destinationId;
 
-    public TransferAccountModel(String sourceId, String destinationId) {
-        this.sourceId = sourceId;
+    public BalanceAccountModel(String idOrigem, String destinationId) {
+        this.sourceId = idOrigem;
         this.destinationId = destinationId;
     }
+
 }

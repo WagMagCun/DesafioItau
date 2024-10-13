@@ -1,6 +1,6 @@
 package com.itau.banking.transfer_api.domain.model;
 
-import com.itau.banking.transfer_api.resource.dto.ClientResponseDTO;
+import com.itau.banking.transfer_api.resource.dto.response.ClientDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,19 +9,11 @@ import lombok.Setter;
 public class ClientModel {
 
     private String id;
-    private String nome;
-    private String telefone;
-    private String tipoPessoa;
+    private String name;
+    private String telephone;
+    private String personType;
 
     public ClientModel() {
     }
 
-    public static ClientModel fromDTO(ClientResponseDTO dto) {
-        ClientModel clientModel = new ClientModel();
-        clientModel.setId(dto.getId());
-        clientModel.setNome(dto.getNome());
-        clientModel.setTelefone(dto.getTelefone());
-        clientModel.setTipoPessoa(dto.getTipoPessoa());
-        return clientModel;
-    }
 }

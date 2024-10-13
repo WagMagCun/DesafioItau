@@ -1,6 +1,6 @@
 package com.itau.banking.transfer_api.domain.model;
 
-import com.itau.banking.transfer_api.resource.dto.AccountResponseDTO;
+import com.itau.banking.transfer_api.resource.dto.response.AccountDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,17 +9,9 @@ import lombok.Setter;
 public class AccountModel {
 
     private String id;
-    private double saldo;
-    private Boolean ativo;
-    private double limiteDiario;
+    private double balance;
+    private Boolean active;
+    private double dailyLimit;
 
-    public static AccountModel fromDTO(AccountResponseDTO dto) {
-        AccountModel accountModel = new AccountModel();
-        accountModel.setId(dto.getId());
-        accountModel.setSaldo(dto.getSaldo());
-        accountModel.setAtivo(dto.getAtivo());
-        accountModel.setLimiteDiario(dto.getLimiteDiario());
-        return accountModel;
-    }
 }
 

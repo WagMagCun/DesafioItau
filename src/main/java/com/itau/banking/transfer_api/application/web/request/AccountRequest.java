@@ -1,5 +1,6 @@
 package com.itau.banking.transfer_api.application.web.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.itau.banking.transfer_api.domain.model.TransferAccountModel;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +9,13 @@ import lombok.Setter;
 @Setter
 public class AccountRequest {
 
-    private String idOrigem;
-    private String idDestino;
+    @JsonProperty("idOrigem")
+    private String sourceId;
+
+    @JsonProperty("idDestino")
+    private String destinationId;
 
     public TransferAccountModel toModel() {
-        return new TransferAccountModel(idOrigem, idDestino);
+        return new TransferAccountModel(sourceId, destinationId);
     }
 }

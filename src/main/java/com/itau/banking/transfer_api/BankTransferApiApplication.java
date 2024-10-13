@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @Slf4j
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.itau.banking.transfer_api.resource.repository")
+@EnableFeignClients(basePackages = "com.itau.banking.transfer_api.resource.client")
 public class BankTransferApiApplication {
 
 	public static void main(String[] args) {
