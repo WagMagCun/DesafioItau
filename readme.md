@@ -16,23 +16,41 @@ Este serviço é responsável por processar transferências bancárias entre con
 - Swagger (para documentação)
 
 ## Preparação do ambiente
+
+## Dependencia do projeto DesafioItau Wiremock
 1. Clone o repositório do projeto para sua máquina local usando o Git:
    ```bash
-   git clone https://github.com/WagMagCun/DesafioItau.git
-   cd DesafioItau
+   git clone https://github.com/mllcarvalho/DesafioItau.git
+    cd DesafioItau
 
-2. Construção dos Containers com Docker Compose
-   Na raiz do projeto acessar a pasta docker onde o arquivo docker-compose.yml está localizado, execute o comando abaixo para construir e iniciar todo o container  definido no Docker Compose:
+## Clonagem do Projeto de transferências Bancárias
+2. Clone o repositório do projeto para sua máquina local usando o Git:
+   ```bash
+   https://github.com/WagMagCun/DesafioItau.git
+    cd DesafioItau-main
+
+## Docker configuracao de Rede
+3. Para que os dois projetos compartilhem a mesma rede foi necessário criação de uma rede.
+   ```bash
+   docker network create api-network
+
+4. docker-compose.yml do projeto Wiremock deverá ter referencia para a rede
+    ```bash
+                networks:
+                - api-network
+    networks:
+       api-network:
+          external: true
+
+5. Construção dos Containers com Docker Compose
+   Na raiz dos projetos Wiremock e Tranferencia acessar a pasta onde o arquivo docker-compose.yml está localizado, execute o comando abaixo para construir e iniciar todo o container  definido no Docker Compose:
     ```bash
    cd docker
    docker-compose up --build -d
 
-
 ## Documentação Swagger
 1.  A documentação swagger pode ser acessada a partir da URL abaixo:
-    http://localhost:8080/swagger-ui/index.html#/
-2. Endpoints da API
-
+    http://localhost:8091/swagger-ui/index.html
 
 ## Estrutura do Projeto
 A estrutura dos diretórios e pacotes é organizada de acordo com padrões de arquitetura como Arquitetura Hexagonal:
@@ -43,7 +61,7 @@ A estrutura dos diretórios e pacotes é organizada de acordo com padrões de ar
 
 ## Observabilidade
 Micrometer e Prometheus: Como as métricas são expostas.
-http://localhost:8080/actuator/prometheus
+http://localhost:8091/actuator/prometheus
 
 ## Resiliência
 ### Retry
@@ -56,24 +74,21 @@ Tempo de Espera Entre Tentativas: 2 segundos
 O sistema implementa um Circuit Breaker para chamadas à API BACEN, com o objetivo de melhorar a resiliência e prevenir falhas em cascata.
 As regras serão baseadas em variáveis de ambiente, ou seja, parametros iniciais que poderão ser reajustados de acordo com o desempenho observado e as necessidades do sistema sem a necessidade de recompilar o código,
 favorecendo a flexibilidade na adaptação do comportamento do sistema em resposta a mudanças nas cargas de trabalho ou requisitos de desempenho sendo não nescessário a recom
-
-* `sliding-window-size: 100` # Monitorar as últimas 100 chamadas
-* `permitted-number-of-calls-in-same-window: 100` # Permitir até 100 chamadas dentro da janela
-* `failure-rate-threshold: 60` # Abertura do circuito se 60% das chamadas falharem
-* `wait-duration-in-open-state: 30000` # Circuito fica aberto por 30 segundos antes de tentar novamente
-* `minimum-number-of-calls: 50` # Considerar apenas se houver pelo menos 50 chamadas**
+Configurações:
+* Limite de falhas: se 60% das chamadas falharem, o Circuit Breaker se abre.
+* Duração aberta: o Circuit Breaker permanece aberto por 30 segundos antes de tentar fechar novamente.
 
 ##  Endpoints da API
-URL: http://localhost:8080/transferencia
+URL: http://localhost:8091/transferencia
 Método: HTTP (POST)
 
 ### Exemplo de requisição
 ```bash
-curl --location 'http://localhost:8080/transferencia' \
+curl --location 'http://localhost:8091/transferencia' \
 --header 'Content-Type: application/json' \
 --data '{
     "idCliente": "2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f", 
-    "valor": 12.00,
+    "valor": 10000000,
     "conta": {
         "idOrigem": "d0d32142-74b7-4aca-9c68-838aeacef96b", 
         "idDestino": "41313d7b-bd75-4c75-9dea-1f4be434007f" 

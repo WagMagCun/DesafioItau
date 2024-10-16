@@ -1,0 +1,19 @@
+version: '3'
+services:
+  transfer-api:
+    image: transfer-api:latest
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8091:8080"
+    env_file:
+      - ../hom.env
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    external: true
+
+

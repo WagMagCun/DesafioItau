@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "88a588c7-7828-408d-90de-df3517615f25",
+		"name": "DesafioItau",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17783470"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/clientes/{{idCliente2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						"{{idCliente2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/contas/{{idConta2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"contas",
+						"{{idConta2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizaSaldo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor\": 1000.00,\r\n    \"conta\": {\r\n        \"idOrigem\": \"d0d32142-74b7-4aca-9c68-838aeacef96b\", // CONTA 1\r\n        \"idDestino\": \"41313d7b-bd75-4c75-9dea-1f4be434007f\" //CONTA 2\r\n    }\r\n  }\r\n  //  CONTA 1\r\n  // \"saldo\": 5000.00,\r\n  // \"ativo\": true,\r\n  // \"limiteDiario\": 500.00\r\n\r\n  // CONTA 2\r\n  // \"saldo\": 10.00,\r\n  // \"ativo\": true,\r\n  // \"limiteDiario\": 1000.00",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/contas/saldos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"contas",
+						"saldos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferencia",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\": \"2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f\", \r\n    \"valor\": 10000000,\r\n    \"conta\": {\r\n        \"idOrigem\": \"d0d32142-74b7-4aca-9c68-838aeacef96b\", // CONTA 1\r\n        \"idDestino\": \"41313d7b-bd75-4c75-9dea-1f4be434007f\" // CONTA 2\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/transferencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"transferencia"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NotificacoesBacen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor\": 1000.00,\r\n    \"conta\": {\r\n        \"idOrigem\": \"d0d32142-74b7-4aca-9c68-838aeacef96b\",\r\n        \"idDestino\": \"41313d7b-bd75-4c75-9dea-1f4be434007f\"\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/notificacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"notificacoes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "idCliente1",
+			"value": "2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f",
+			"type": "string"
+		},
+		{
+			"key": "idCliente2",
+			"value": "bcdd1048-a501-4608-bc82-66d7b4db3600",
+			"type": "string"
+		},
+		{
+			"key": "idConta1",
+			"value": "d0d32142-74b7-4aca-9c68-838aeacef96b",
+			"type": "default"
+		},
+		{
+			"key": "idConta2",
+			"value": "41313d7b-bd75-4c75-9dea-1f4be434007f",
+			"type": "string"
+		}
+	]
+}

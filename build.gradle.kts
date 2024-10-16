@@ -76,4 +76,22 @@ jacoco {
 	toolVersion = "0.8.8"
 }
 
+tasks.register<Jar>("plainJar") {
+	manifest {
+		attributes(
+			"Main-Class" to "com.itau.banking.transfer_api.BankTransferApiApplication"  // Certifique-se de que o nome da classe principal está correto
+		)
+	}
+	archiveClassifier.set("plain")
+}
+
+springBoot {
+	mainClass.set("com.itau.banking.transfer_api.BankTransferApiApplication")  // Configura o Spring Boot para empacotar corretamente o JAR executável
+}
+
+
+
+tasks.jar {
+	archiveBaseName.set("transfer-api")
+}
 

@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "BacenClient", url = "http://localhost:9090")
+@FeignClient(name = "BacenClient", url = "${wiremock.service.url}")
 public interface IBacenClient {
 
     @PostMapping("/notificacoes")
