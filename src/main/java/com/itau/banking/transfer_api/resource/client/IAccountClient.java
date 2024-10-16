@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "AccountClient", url = "http://localhost:9090")
+@FeignClient(name = "AccountClient", url = "${wiremock.service.url}")
 public interface IAccountClient {
 
     @GetMapping("/contas/{id}")

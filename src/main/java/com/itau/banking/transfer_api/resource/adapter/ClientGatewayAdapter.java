@@ -3,7 +3,6 @@ package com.itau.banking.transfer_api.resource.adapter;
 import com.itau.banking.transfer_api.common.LogTags;
 import com.itau.banking.transfer_api.domain.contract.IClientGateway;
 import com.itau.banking.transfer_api.domain.model.ClientModel;
-import com.itau.banking.transfer_api.domain.model.TransferModel;
 import com.itau.banking.transfer_api.resource.client.IClientClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class ClientGatewayAdapter implements IClientGateway {
     public ClientModel searchClientById(String id) {
 
         try {
-            log.info(LogTags.GATEWAY + " Search Client by ID: {}", id);
+            log.debug(LogTags.GATEWAY + " Search Client by ID: {}", id);
             ClientModel client = clientClient.searchClientById(id).toDomain();
             log.info(LogTags.GATEWAY + " Successfully searched Client by ID: {}", id);
 

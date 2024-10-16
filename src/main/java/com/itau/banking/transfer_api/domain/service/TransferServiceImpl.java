@@ -24,7 +24,6 @@ public class TransferServiceImpl implements ITransferService {
     private final BacenGatewayAdapter bacenGatewayAdapter;
     private final ClientGatewayAdapter clientGatewayAdapter;
 
-
     public TransferServiceImpl(AccountGatewayAdapter accountGatewayAdapter,
                                BacenGatewayAdapter bacenGatewayAdapter,
                                ClientGatewayAdapter clientGatewayAdapter
@@ -129,7 +128,7 @@ public class TransferServiceImpl implements ITransferService {
     }
 
     @Retry(name = "notifyBacenRetry", fallbackMethod = "notifyBacenFallback")
-    @CircuitBreaker(name = "notifyBacen")
+    @CircuitBreaker(name = "notifyBacen", fallbackMethod = "notifyBacenFallback")
     public ResponseEntity<Void> notifyBacen(BalanceModel balanceModel) {
         return bacenGatewayAdapter.notifyBacen(balanceModel);
     }

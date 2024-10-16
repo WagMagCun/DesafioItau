@@ -19,11 +19,8 @@ resilience4j:
   circuitbreaker:
     instances:
       notifyBacen:
-        sliding-window-size: 100
-        permitted-number-of-calls-in-same-window: 100
         failure-rate-threshold: 60
         wait-duration-in-open-state: 30000
-        minimum-number-of-calls: 50
   retry:
     instances:
       notifyBacenRetry:
@@ -41,3 +38,7 @@ management:
         enabled: true
     tags:
       enabled: true
+
+wiremock:
+  service:
+    url: ${WIREMOCK_SERVICE_URL:http://localhost:8080}

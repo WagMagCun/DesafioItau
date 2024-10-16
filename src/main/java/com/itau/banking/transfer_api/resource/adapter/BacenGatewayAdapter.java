@@ -27,7 +27,7 @@ public class BacenGatewayAdapter implements IBacenGateway {
 
         try {
 
-            log.info(LogTags.GATEWAY + " Start transfer: {}", logTransfer(balanceModel));
+            log.debug(LogTags.GATEWAY + " Start transfer: {}", logTransfer(balanceModel));
             ResponseEntity<Void> response = bacenClient.notifyBacen(balanceModel.toDTORequest());
             log.info(LogTags.GATEWAY + " Successfully transferred! : {} HTTP Status: {} ", logTransfer(balanceModel), response.getStatusCode());
             return response;

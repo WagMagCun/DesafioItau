@@ -28,7 +28,7 @@ public class AccountGatewayAdapter implements IAccountGateway {
 
         try {
 
-            log.info(LogTags.GATEWAY + " Search Account by ID: {}", id);
+            log.debug(LogTags.GATEWAY + " Search Account by ID: {}", id);
             var conta =  accountClient.searchAccountById(id).toDomain();
             log.info(LogTags.GATEWAY + " Successfully searched Account by ID: {}", id);
 
