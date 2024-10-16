@@ -28,13 +28,17 @@ Este serviço é responsável por processar transferências bancárias entre con
    ```bash
    https://github.com/WagMagCun/DesafioItau.git
     cd DesafioItau-main
+   
+3. Efetuar build do projeto para geração do jar.
+   ```bash
+   ./gradlew clean build
 
 ## Docker configuracao de Rede
-3. Para que os dois projetos compartilhem a mesma rede foi necessário criação de uma rede.
+4. Para que os dois projetos compartilhem a mesma rede foi necessário criação de uma rede.
    ```bash
    docker network create api-network
 
-4. docker-compose.yml do projeto Wiremock deverá ter referencia para a rede
+5. docker-compose.yml do projeto Wiremock deverá ter referencia para a rede
     ```bash
                 networks:
                 - api-network
@@ -42,7 +46,7 @@ Este serviço é responsável por processar transferências bancárias entre con
        api-network:
           external: true
 
-5. Construção dos Containers com Docker Compose
+6. Construção dos Containers com Docker Compose
    Na raiz dos projetos Wiremock e Tranferencia acessar a pasta onde o arquivo docker-compose.yml está localizado, execute o comando abaixo para construir e iniciar todo o container  definido no Docker Compose:
     ```bash
    cd docker
