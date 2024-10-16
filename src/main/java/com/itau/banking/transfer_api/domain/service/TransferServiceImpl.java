@@ -3,12 +3,13 @@ package com.itau.banking.transfer_api.domain.service;
 import com.itau.banking.transfer_api.domain.exception.*;
 import com.itau.banking.transfer_api.domain.model.*;
 import com.itau.banking.transfer_api.domain.contract.ITransferService;
+import com.itau.banking.transfer_api.metrics.MetricsService;
 import com.itau.banking.transfer_api.resource.adapter.*;
+import feign.FeignException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -23,14 +24,17 @@ public class TransferServiceImpl implements ITransferService {
     private final AccountGatewayAdapter accountGatewayAdapter;
     private final BacenGatewayAdapter bacenGatewayAdapter;
     private final ClientGatewayAdapter clientGatewayAdapter;
+    private final MetricsService metricsService;
 
     public TransferServiceImpl(AccountGatewayAdapter accountGatewayAdapter,
                                BacenGatewayAdapter bacenGatewayAdapter,
-                               ClientGatewayAdapter clientGatewayAdapter
+                               ClientGatewayAdapter clientGatewayAdapter,
+                               MetricsService metricsService
     ) {
         this.accountGatewayAdapter = accountGatewayAdapter;
         this.bacenGatewayAdapter = bacenGatewayAdapter;
         this.clientGatewayAdapter = clientGatewayAdapter;
+        this.metricsService = metricsService;
 
     }
 
@@ -56,10 +60,10 @@ public class TransferServiceImpl implements ITransferService {
             } else if (cause instanceof ExecutionException) {
                 throw new RuntimeException("Falha ao tentar efetuar transferencia no acesso a conta e ou cliente:", cause.getCause());
             }
-            return null;
+            else {
+                throw new RuntimeException("Erro inesperado durante a execução da transferência:", cause);
+            }
         });
-
-        parallelCalls.join();
 
         ClientModel clientCallResult = clientCall.join();
         AccountModel accountCallResult = accountCall.join();
@@ -75,7 +79,7 @@ public class TransferServiceImpl implements ITransferService {
         );
 
         transfer.setIdTransfer(UUID.randomUUID().toString());
-        ResponseEntity<Void> updateBalance = updateBalance(balance);
+        updateBalance(balance);
 
         notifyBacen(balance);
 
@@ -85,16 +89,20 @@ public class TransferServiceImpl implements ITransferService {
 
     private void validaPreTransferData(ClientModel client, AccountModel account, TransferModel transfer) {
         if(client == null || client.getId() == null){
+            metricsService.incrementClientNotFound();
             throw new ClientNotFoundException("Cliente não localizado: " + client);
         }
 
         if (!account.getActive()) {
+            metricsService.incrementAccountInactive();
             throw new AccountInactiveException("Conta não está ativa: " + transfer.getAccount().getSourceId());
         }
         if (account.getBalance() <= 0 || account.getBalance() < transfer.getAmmount()) {
+            metricsService.incrementInsufficientBalance();
             throw new InsufficientBalanceException("Saldo insuficiente para realizar a transferência.");
         }
         if (account.getDailyLimit() <= 0 || account.getDailyLimit() < transfer.getAmmount()) {
+            metricsService.incrementDailyLimitExceeded();
             throw new DailyLimitExceededException("Valor de transferência excede o limite diário.");
         }
     }
@@ -130,12 +138,23 @@ public class TransferServiceImpl implements ITransferService {
     @Retry(name = "notifyBacenRetry", fallbackMethod = "notifyBacenFallback")
     @CircuitBreaker(name = "notifyBacen", fallbackMethod = "notifyBacenFallback")
     public ResponseEntity<Void> notifyBacen(BalanceModel balanceModel) {
-        return bacenGatewayAdapter.notifyBacen(balanceModel);
+        try {
+            return bacenGatewayAdapter.notifyBacen(balanceModel);
+        } catch (FeignException e) {
+            log.error("Erro Feign ao notificar o BACEN: {}", e.getMessage());
+            addFailureNotificationBacenToSQS(balanceModel);
+            return ResponseEntity.ok().build();
+        }
     }
 
     public ResponseEntity<Void> notifyBacenFallback(BalanceModel balanceModel, Throwable t) {
-        log.error("Error notifying BACEN, using fallback. Error: {}", t.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        log.error("Error ao noticicar BACEN, usando fallback.{} Erro: {}", balanceModel, t.getMessage());
+        addFailureNotificationBacenToSQS(balanceModel);
+        return ResponseEntity.ok().build();
+    }
+
+    void addFailureNotificationBacenToSQS(BalanceModel balanceModel){
+        log.info("Adicionando item de notificação ao BACEN que falhou para o AWS SQS: {}", balanceModel);
     }
 
 }

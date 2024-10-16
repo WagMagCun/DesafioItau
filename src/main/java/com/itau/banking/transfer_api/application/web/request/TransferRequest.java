@@ -19,6 +19,6 @@ public class TransferRequest {
     private AccountRequest account;
 
     public TransferModel toModel() {
-        return new TransferModel(idClient, amount, account.toModel()); //@@
+        return new TransferModel(idClient, amount, account.toModel());
     }
 }

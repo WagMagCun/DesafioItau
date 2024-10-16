@@ -61,7 +61,17 @@ A estrutura dos diretórios e pacotes é organizada de acordo com padrões de ar
 
 ## Observabilidade
 Micrometer e Prometheus: Como as métricas são expostas.
+
 http://localhost:8091/actuator/prometheus
+
+Latência, Taxa de Sucesso e Taxa de Erro:
+* /actuator/metrics
+* /actuator/metrics/http.server.requests
+
+Uso de Memória e CPU
+* /actuator/metrics/jvm.memory
+* /actuator/metrics/system.cpu.usage
+
 
 ## Resiliência
 ### Retry
@@ -88,7 +98,7 @@ curl --location 'http://localhost:8091/transferencia' \
 --header 'Content-Type: application/json' \
 --data '{
     "idCliente": "2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f", 
-    "valor": 10000000,
+    "valor": 100,
     "conta": {
         "idOrigem": "d0d32142-74b7-4aca-9c68-838aeacef96b", 
         "idDestino": "41313d7b-bd75-4c75-9dea-1f4be434007f" 

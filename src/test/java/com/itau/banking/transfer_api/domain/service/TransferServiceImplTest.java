@@ -2,6 +2,7 @@ package com.itau.banking.transfer_api.domain.service;
 
 import com.itau.banking.transfer_api.domain.exception.*;
 import com.itau.banking.transfer_api.domain.model.*;
+import com.itau.banking.transfer_api.metrics.MetricsService;
 import com.itau.banking.transfer_api.resource.adapter.AccountGatewayAdapter;
 import com.itau.banking.transfer_api.resource.adapter.BacenGatewayAdapter;
 import com.itau.banking.transfer_api.resource.adapter.ClientGatewayAdapter;
@@ -35,6 +36,9 @@ public class TransferServiceImplTest {
     private AccountModel accountModel;
     private ClientModel clientModel;
 
+    @Mock
+    private MetricsService metricsService;
+
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -55,6 +59,8 @@ public class TransferServiceImplTest {
         );
 
         balanceModel = new BalanceModel(100.0, new BalanceAccountModel("destination123", "source123"));
+
+        transferService = new TransferServiceImpl(accountGatewayAdapter, bacenGatewayAdapter,clientGatewayAdapter, metricsService);
     }
 
     @Test

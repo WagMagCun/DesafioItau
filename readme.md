@@ -88,7 +88,7 @@ curl --location 'http://localhost:8091/transferencia' \
 --header 'Content-Type: application/json' \
 --data '{
     "idCliente": "2ceb26e9-7b5c-417e-bf75-ffaa66e3a76f", 
-    "valor": 10000000,
+    "valor": 100,
     "conta": {
         "idOrigem": "d0d32142-74b7-4aca-9c68-838aeacef96b", 
         "idDestino": "41313d7b-bd75-4c75-9dea-1f4be434007f" 

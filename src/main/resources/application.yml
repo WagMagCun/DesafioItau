@@ -33,6 +33,10 @@ management:
       exposure:
         include: "*"
   metrics:
+    web:
+      server:
+        request:
+          enabled: true
     export:
       prometheus:
         enabled: true
